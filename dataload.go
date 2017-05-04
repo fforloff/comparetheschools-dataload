@@ -16,7 +16,7 @@ import (
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 
-	"bitbucket.org/vint_au/comparetheschools-dataload/models"
+	"github.com/fforoff/comparetheschools-dataload/models"
 )
 
 func check(m string, e error) {
