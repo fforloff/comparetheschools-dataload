@@ -28,15 +28,15 @@ type (
 	//School ...
 	School struct {
 		Name      string        `bson:"name" csv:"name"`
-		Adult     bool          `csv:"adult"`
-		Small     bool          `csv:"small"`
-		InterBcl  bool          `csv:"inter_bcl"`
-		EduSector string        `csv:"edu_sector"`
-		Type      string        `csv:"type"`
-		Address   string        `csv:"address"`
-		Locality  string        `csv:"locality"`
-		Postcode  string        `csv:"postcode"`
-		State     string        `csv:"state"`
+		Adult     bool          `bson:"adult" csv:"adult"`
+		Small     bool          `bson:"small" csv:"small"`
+		InterBcl  bool          `bson:"inter_bcl" csv:"inter_bcl"`
+		EduSector string        `bson:"edu_sector" csv:"edu_sector"`
+		Type      string        `bson:"type" csv:"type"`
+		Address   string        `bson:"address" csv:"address"`
+		Locality  string        `bson:"locality" csv:"locality"`
+		Postcode  string        `bson:"postcode" csv:"postcode"`
+		State     string        `bson:"state" csv:"state"`
 		ID        bson.ObjectId `bson:"_id,omitempty"`
 	}
 )
