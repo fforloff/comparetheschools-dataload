@@ -16,7 +16,7 @@ import (
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 
-	"github.com/fforoff/comparetheschools-dataload/models"
+	"github.com/fforloff/comparetheschools-dataload/models"
 )
 
 func check(m string, e error) {
@@ -184,7 +184,7 @@ func main() {
 		//err = sc.Find(bson.M{"$and": []interface{}{bson.M{"name": school.Name}, bson.M{"locality": school.Locality}}}).One(&sch)
 		check("Can not find a school", err)
 
-		result.School = sch.Id
+		result.School = sch.ID
 		result.Year = *yearPtr
 		result.RankingScore = result.CalculateRankingScore()
 		//log.Println(result.RankingScore)
@@ -224,7 +224,7 @@ func main() {
 		}
 		log.Printf("School ID: %v, Ranking score: %v, Rank: %v", r.School, r.RankingScoreWMA, rank)
 		err = rc.Update(bson.M{"school_id": r.School, "year": r.Year}, bson.M{"$set": bson.M{"rank": rank}})
-		//check("Can not update rank.", err)
+		check("Can not update rank.", err)
 		previousRankingScore = r.RankingScoreWMA
 	}
 

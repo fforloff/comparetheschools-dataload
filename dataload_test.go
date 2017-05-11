@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"testing"
 
-	"bitbucket.org/vint_au/comparetheschools-dataload/models"
+	"github.com/fforloff/comparetheschools-dataload/models"
 )
 
 func TestCheckFunc(t *testing.T) {
